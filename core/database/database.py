@@ -25,7 +25,7 @@ async def connect_to_mongo():
     # Step 4: Create MongoDB client (lazy connection)
     try:
         db_instance.client = AsyncIOMotorClient(
-            os.getenv("MONGODB_URI", "mongodb://localhost:27017")
+            os.getenv("MONGO_URL", "mongodb://localhost:27017")
         )
 
         # Step 5: Create ODMantic engine using the client
